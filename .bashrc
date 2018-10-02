@@ -87,6 +87,8 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+LS_COLORS=$LS_COLORS:'di=1;36:' ; export LS_COLORS
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -150,17 +152,34 @@ PS_SEPARATOR=''
 # Same color as previous field separator or no-color separator
 PS_SHORT_SEPARATOR=''
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 #my git aliases
 alias ga="git add -A"
-alias gc="git commit -m"
+alias gc="git commit"
+alias gcm="git commit -m"
 alias gp="git push"
 alias gu="git pull"
 alias gm="git merge"
 alias gb="git checkout"
-alias gbl="git branch | less"
+alias gbl="git branch"
 alias gbn="git checkout -b"
 alias gbm="git checkout master"
 alias gs="git status"
 alias gd="git diff"
 alias gl="git log --oneline"
 alias changed="git diff HEAD^ --name-only"
+alias hh="history"
+alias pbcopy="xclip -selection c"
+alias pbpaste="xclip -selection clipboard -o"
+alias bashrc="vim ~/.bashrc && source ~/.bashrc"
+alias serve="python -m SimpleHTTPServer"
+alias dp="docker ps"
+alias dpa="docker ps --all"
+alias de="docker exec -ti"
+alias ds="docker start"
+alias dx="docker stop"
+alias dr="docker restart"
+alias dl="docker logs -f"
+alias ls="ls -lah --color"
