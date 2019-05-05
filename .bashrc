@@ -75,7 +75,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls -G'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -119,7 +119,6 @@ if ! shopt -oq posix; then
 fi
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
 [[ $- == *i* ]] && . ~/.powerline.sh
 # Specify the date format you would like to use with 'date' and 'datetime' features.
 # For more information, please run: man date
@@ -141,7 +140,7 @@ PS_TIME_FORMAT='%-I:%M:%S%P'
 #   - time: Show the current time
 #   - username: Show the current user (shows in red for root)
 #   - virtualenv: Show the current python virtual environment
-PS_FEATURES='virtualenv path git'
+PS_FEATURES='exitcode time path git'
 
 # Disable color output if when set to 'true'
 PS_NO_COLOR=''
@@ -182,4 +181,4 @@ alias ds="docker start"
 alias dx="docker stop"
 alias dr="docker restart"
 alias dl="docker logs -f"
-alias ls="ls -lah --color"
+alias ls="ls -lahG"
