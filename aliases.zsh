@@ -1,0 +1,7 @@
+alias gs="git status"
+alias ga="git add -A"
+alias gbl="git branch"
+alias gl="git log --oneline"
+alias gd="git diff"
+alias ls="ls -lahG"
+alias python="python3"
